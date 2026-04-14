@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVault - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/auth.js" defer></script>
+</head>
+<body class="bg-gray-900 text-white font-inter h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600 rounded-full blur-[120px] opacity-50 absolute-bg-animation"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-600 rounded-full blur-[120px] opacity-50 absolute-bg-animation-alt"></div>
+    
+    <div class="relative z-10 w-full max-w-md p-8 bg-gray-800 bg-opacity-60 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">SecureVault</h1>
+            <p class="text-gray-400 mt-2 text-sm">Enterprise-grade secure file management</p>
+        </div>
+        
+        <div id="alert-box" class="hidden mb-4 p-3 rounded-lg text-sm text-white"></div>
+        
+        <form id="login-form" class="space-y-5">
+            <div>
+                <label class="block text-sm font-medium text-gray-300">Username</label>
+                <input type="text" id="login-username" class="mt-1 w-full p-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-500" placeholder="Enter username" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-300">Password</label>
+                <input type="password" id="login-password" class="mt-1 w-full p-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-500" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium rounded-lg shadow-lg transform transition hover:-translate-y-0.5 active:translate-y-0">
+                Sign In
+            </button>
+            <p class="text-center text-sm text-gray-400 mt-4">
+                Don't have an account? <a href="#" id="show-register" class="text-blue-400 hover:text-blue-300 transition">Register</a>
+            </p>
+        </form>
+
+        <form id="register-form" class="space-y-5 hidden">
+            <div>
+                <label class="block text-sm font-medium text-gray-300">Username</label>
+                <input type="text" id="reg-username" class="mt-1 w-full p-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" placeholder="Choose a username" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-300">Password</label>
+                <input type="password" id="reg-password" class="mt-1 w-full p-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="w-full py-3 px-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium rounded-lg shadow-lg transform transition hover:-translate-y-0.5">
+                Create Account
+            </button>
+            <p class="text-center text-sm text-gray-400 mt-4">
+                Already have an account? <a href="#" id="show-login" class="text-blue-400 hover:text-blue-300 transition">Sign In</a>
+            </p>
+        </form>
+        
+        <form id="otp-form" class="space-y-5 hidden">
+            <div class="text-center mb-4">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-900 text-blue-300 mb-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <p class="text-sm text-gray-300">Enter the 6-digit code sent to your terminal (console).</p>
+            </div>
+            <div>
+                <input type="text" id="otp-code" class="mt-1 w-full p-3 text-center tracking-widest text-xl bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" placeholder="••••••" maxlength="6" required>
+            </div>
+            <button type="submit" class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium rounded-lg shadow-lg transform transition hover:-translate-y-0.5">
+                Verify Identity
+            </button>
+            <p class="text-center text-sm text-gray-400 mt-4">
+                <a href="#" id="back-to-login" class="text-gray-400 hover:text-white transition">Cancel</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
